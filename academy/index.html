@@ -584,11 +584,11 @@ function renderNav() {
   let html = '';
   if (!u) {
     html = L('#/', 'Início') + L('#/aulas', 'Aulas') + L('#/referencia', 'Referência') + L('#/noticias', 'Notícias')
-      + `<a class="cta" href="#/assinar">Assinar — R$ 99/mês</a>` + `<a class="user" href="#/login">Entrar</a>`;
+      + `<a class="cta" href="#/assinar">Assinar — R$ 39,90/mês</a>` + `<a class="user" href="#/login">Entrar</a>`;
   } else {
     html = L('#/app', 'Painel') + L('#/aulas', 'Aulas') + L('#/referencia', 'Referência') + L('#/noticias', 'Notícias') + L('#/certificados', 'Certificados');
     if (isProf(u)) html += L('#/admin', 'Admin');
-    if (!assinante(u)) html += `<a class="cta" href="#/assinar">Assinar — R$ 99/mês</a>`;
+    if (!assinante(u)) html += `<a class="cta" href="#/assinar">Assinar — R$ 39,90/mês</a>`;
     html += `<a class="user" href="#/perfil">${esc(u.nome.split(' ')[0])}</a>`;
   }
   links.innerHTML = html;
@@ -638,7 +638,7 @@ function vHome() {
       <p class="eyebrow">Educação médica continuada</p>
       <h1>Uma aula nova <em>toda semana</em>. Saber que vira <em>certificado</em>.</h1>
       <p class="sub">Aulas de cardiogeriatria, saúde do idoso e clínica médica com os professores Igor Morais (PUC Minas · FCMMG) e Bernardo Tardin (FCMMG). Assista, faça o pós-teste e receba o certificado — tudo digital.</p>
-      <div class="actions"><a class="btn" href="#/assinar">Assinar por R$ 99/mês</a><a class="btn-ghost" href="#/aulas">Ver o catálogo</a></div>
+      <div class="actions"><a class="btn" href="#/assinar">Assinar por R$ 39,90/mês</a><a class="btn-ghost" href="#/aulas">Ver o catálogo</a></div>
     </div>
     <div class="hero-mark">${MK}<p class="tag">Valor · ex · cura</p></div>
   </div></header>
@@ -669,7 +669,7 @@ function vHome() {
       </div>
       <div class="price-card reveal">
         <div class="k" style="font-family:var(--fl);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)">Plano único</div>
-        <div class="val" style="margin-top:10px">R$ 99<small>/mês</small></div>
+        <div class="val" style="margin-top:10px">R$ 39,90<small>/mês</small></div>
         <ul>
           <li>Aula nova toda semana — vídeo, slides ou material, como o tema pedir</li>
           <li>Pós-teste comentado por aula</li>
@@ -706,6 +706,7 @@ function vHome() {
   <section><div class="wrap">
     <p class="eyebrow">Central de referência</p>
     <h2>As fontes certas, sempre à mão.</h2>
+    <p class="lead">O acervo de diretrizes e conhecimento fica na área do aluno, já incluído na assinatura.</p>
     <div class="cards c4">
       <a class="card reveal" href="#/referencia"><div class="k">Diretrizes</div><h3>Guidelines</h3><p>AHA, ACC, ESC, SBC, SBGG, GOLD, ADA, KDIGO, IDSA, PCDT…</p></a>
       <a class="card reveal" href="#/referencia"><div class="k">Exames</div><h3>Indicação de imagem</h3><p>ACR Appropriateness Criteria: o método certo para cada cenário clínico.</p></a>
@@ -752,10 +753,10 @@ function vAssinar() {
   const u = me();
   return `<section><div class="wrap center">
     <p class="eyebrow">Assinatura</p>
-    <h2>R$ 99/mês. Tudo incluído.</h2>
+    <h2>R$ 39,90/mês. Tudo incluído.</h2>
     <p class="lead">Aulas semanais, pós-testes, certificados e central de referência. Sem fidelidade — cancele quando quiser.</p>
     <div class="price-card reveal" style="margin-top:34px;text-align:left">
-      <div class="val">R$ 99<small>/mês</small></div>
+      <div class="val">R$ 39,90<small>/mês</small></div>
       <ul>
         <li>Acesso completo ao catálogo e às aulas novas semanais</li>
         <li>Pós-teste comentado + certificado digital por aula</li>
@@ -783,7 +784,7 @@ function vDash() {
   <section style="padding-top:34px"><div class="wrap">
     <p class="eyebrow">Painel</p>
     <h2>Olá, ${esc(u.nome.split(' ')[0])}.</h2>
-    ${!assinante(u) ? `<div class="panel" style="border-color:var(--gold-deep)"><p class="lead" style="margin:0">Sua conta ainda não tem assinatura ativa — as aulas estão bloqueadas. <a href="#/assinar" style="color:var(--gold-hi)">Assine por R$ 99/mês</a> para liberar tudo.</p></div>` : ''}
+    ${!assinante(u) ? `<div class="panel" style="border-color:var(--gold-deep)"><p class="lead" style="margin:0">Sua conta ainda não tem assinatura ativa — as aulas estão bloqueadas. <a href="#/assinar" style="color:var(--gold-hi)">Assine por R$ 39,90/mês</a> para liberar tudo.</p></div>` : ''}
     <div class="kpis">
       <div class="kpi"><div class="n">${pubs.length}</div><div class="l">Aulas publicadas</div></div>
       <div class="kpi"><div class="n">${andamento.length}</div><div class="l">Em andamento</div></div>
@@ -831,7 +832,7 @@ function vAula(id) {
   } else if (bloqueada) {
     corpo = `<div class="panel center" style="padding:48px 24px;border-color:var(--gold-deep)">
       <h3>Conteúdo exclusivo para assinantes</h3>
-      <p class="lead">Assine por R$ 99/mês para liberar esta e todas as aulas, com pós-teste e certificado.</p>
+      <p class="lead">Assine por R$ 39,90/mês para liberar esta e todas as aulas, com pós-teste e certificado.</p>
       <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;justify-content:center">
         <a class="btn" href="#/assinar">Assinar agora</a>
         ${!u ? '<a class="btn-ghost" href="#/login">Já tenho conta</a>' : ''}
@@ -1001,8 +1002,23 @@ function vCerts() {
 
 /* ---------- referência / notícias / termos ---------- */
 function vRef() {
-  return `<section style="padding-top:44px"><div class="wrap">
+  const u = me();
+  if (!u || !assinante(u)) {
+    return `<section style="padding-top:44px"><div class="wrap">
     <p class="eyebrow">Central de referência</p>
+    <h2>O acervo do assinante.</h2>
+    <p class="lead">Diretrizes das principais sociedades, indicação de exames de imagem (ACR), antimicrobianos e medicações (Sanford, Stanford, Anvisa), calculadoras clínicas e a biblioteca de downloads. Tudo escolhido pelos professores e incluído na assinatura.</p>
+    <div class="panel center" style="padding:44px 24px;border-color:var(--gold-deep)">
+      <h3>Conteúdo exclusivo para assinantes</h3>
+      <p class="lead">Acervo completo, aulas semanais, pós-testes e certificados. Assine por R$ 39,90/mês.</p>
+      <div style="display:flex;gap:12px;margin-top:20px;flex-wrap:wrap;justify-content:center">
+        <a class="btn" href="#/assinar">Assinar agora</a>
+        ${!u ? '<a class="btn-ghost" href="#/login">Já tenho conta</a>' : ''}
+      </div></div>
+  </div></section>`;
+  }
+  return `<section style="padding-top:44px"><div class="wrap">
+    <p class="eyebrow">Central de referência · Área do aluno</p>
     <h2>Consulte a fonte, não a memória.</h2>
     <p class="lead">Curadoria dos professores: diretrizes, indicação de exames, antimicrobianos, bulas e calculadoras — sempre nas fontes oficiais.</p>
     ${REFERENCIAS.map(g => `<div class="ref-group">
@@ -1113,7 +1129,7 @@ window.VA = {
   sair: () => { logout(); toast('Sessão encerrada.'); },
   simularAssinatura() {
     const u = me(); if (!u) { go('#/login'); return; }
-    u.assinatura = { ativa: true, desde: hoje(), plano: 'mensal-99' }; saveDB();
+    u.assinatura = { ativa: true, desde: hoje(), plano: 'mensal-3990' }; saveDB();
     toast('Assinatura ativada (simulação). Bons estudos!'); render();
   },
   cancelarAssinatura() {

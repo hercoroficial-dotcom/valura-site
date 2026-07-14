@@ -1,8 +1,9 @@
 # Valura Academy — educação médica continuada
 
 Plataforma da Valura (Dr. Igor Morais e Bernardo Tardin) para venda de aulas online
-a alunos de graduação em medicina: aula semanal (vídeo ou slides) → pós-teste → certificado,
-com assinatura de R$ 99/mês. Identidade **Cálice Solar** (mesma família do site institucional).
+a alunos de graduação em medicina: aula semanal (vídeo, slides ou material) → pós-teste → certificado,
+com assinatura de R$ 39,90/mês que inclui o acervo de diretrizes e referência (exclusivo da área
+do aluno). Identidade **Cálice Solar** (mesma família do site institucional).
 
 ## Arquivos
 - `index.html` — o aplicativo completo (SPA de arquivo único, sem dependências externas).
