@@ -19,6 +19,5 @@ Estático, sem dependências (HTML/CSS/JS inline, SVG). Pronto para GitHub Pages
 - No DNS do domínio, apontar `CNAME`/`A` para o GitHub Pages.
 
 ## Notas
-- `<meta name="robots" content="noindex">` está ativo: o site é compartilhável por link, mas não é indexado por buscadores. Remover quando quiser torná-lo público de fato.
-- Rodapé marcado como "Versão preliminar" — remover na aprovação.
+- Site público desde 2026-07-15: `noindex` e selo "Versão preliminar" removidos (aprovação do Dr. Igor). O Academy (`/academy`) segue com `noindex` + "Versão preliminar" até a Fase 2.
 - Contato `contato@valura.health` é placeholder até registrar o domínio/e-mail.
